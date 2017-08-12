@@ -11,6 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','PagesController@home');
+
+Route::get('about','PagesController@about');
+
+Route::get('plan','PagesController@plan');
+
+Route::get('line-up','PagesController@lineUp');
+
+Route::get('flow','PagesController@flow');
+
+Route::get('contact','PagesController@contact');
+
+Route::get('company','PagesController@company');
+
+Route::get('customers','CustomersController@index');
