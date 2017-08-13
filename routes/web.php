@@ -26,3 +26,17 @@ Route::get('contact','PagesController@contact');
 Route::get('company','PagesController@company');
 
 Route::get('customers','CustomersController@index');
+
+Route::get('customers/{customer}','CustomersController@show');
+
+Route::get('chat', function(){
+  return view('chat.index');
+})->middleware('auth');
+
+Route::get('messages', function(){
+  return App\Message::with('user')->get();
+})->middleware('auth');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
